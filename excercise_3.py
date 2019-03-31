@@ -5,12 +5,12 @@ max = 1000
 while True:
     guess = int((max - min) / 2) + min
     print(guess)
-    num = int(input('Wpisz: 1) Za dużo 2) Za mało 3) Wygrałeś'))
+    num = int(input('Choose: 1) Less 2) More 3) Guessed'))
     if num == 1:
         max = guess
     elif num == 2:
         min = guess
-        print("Zgaduję " + str(guess))
+        print("I'm guessing " + str(guess))
     else:
         print("The computer guessed", guess, "and it was correct!")
         break
