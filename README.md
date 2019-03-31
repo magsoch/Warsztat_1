@@ -1,1 +1,1 @@
-Interesting python excercises with randint functions and more.
+Interesting python excercises with randint function and more.
