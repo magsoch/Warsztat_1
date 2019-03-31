@@ -20,18 +20,14 @@ while len(liczby_uzytkownika) < 6:
     liczby_uzytkownika.append(liczba)
     liczby_uzytkownika.sort()
 
-liczby_uzytkownika = sorted(liczby_uzytkownika)
+liczby_uzytkownika = set(sorted(liczby_uzytkownika))
 print(liczby_uzytkownika)
 numerki_maszyny_losujacej = list(range(1, 50))
 random.shuffle(numerki_maszyny_losujacej)
-twoje_szczesliwe_numerki = numerki_maszyny_losujacej[:6]
+twoje_szczesliwe_numerki = set(numerki_maszyny_losujacej[:6])
 print(twoje_szczesliwe_numerki)
-
-counter = 0
-for moj_numer in liczby_uzytkownika:
-    if moj_numer in twoje_szczesliwe_numerki:
-        counter += 1
-if counter >= 3:
-    print("Trafiłeś {} liczb!".format(counter))
+c = twoje_szczesliwe_numerki & liczby_uzytkownika
+if len(c) > 3:
+    print("Brawo wylosowałeś co najmniej 3 liczby: {}".format(c))
 else:
-    print("Słabo losowałeś. Trafione {}".format(counter))
+    print("Nie poszło ci dobrze: {}".format(c))
